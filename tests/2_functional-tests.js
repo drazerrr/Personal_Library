@@ -95,7 +95,7 @@ suite('Functional Tests', function() {
       test('Test GET /api/books/[id] with id not in db',  function(done){
         chai
         .request(server)
-        .get('/api/books')
+        .get('/api/books/:_id')
         .query({
           _id: 'anurag'
         })
@@ -109,7 +109,7 @@ suite('Functional Tests', function() {
       test('Test GET /api/books/[id] with valid id in db',  function(done){
         chai
         .request(server)
-        .get('/api/books')
+        .get('/api/books/:_id')
         .query({
           _id: userId
         })
